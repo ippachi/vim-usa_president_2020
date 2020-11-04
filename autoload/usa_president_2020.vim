@@ -21,7 +21,7 @@ function! s:job_callback(ch, data) abort
 endfunction
 
 function! usa_president_2020#update()
-  call job_start(['curl', '-s', 'https://www.huffpost.com/elections/president.json'], {'callback': function('s:job_callback')})
+  call jobstart(['curl', '-s', 'https://www.huffpost.com/elections/president.json'], {'on_stdout': function('s:job_callback')})
 endfunction
 
 call usa_president_2020#update()
